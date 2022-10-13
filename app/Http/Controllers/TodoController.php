@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ServiceRepository\Services\TodoService;
-use GuzzleHttp\Promise\Create;
-use Symfony\Polyfill\Intl\Idn\Resources\unidata\Regex;
+// use GuzzleHttp\Promise\Create;
+// use Symfony\Polyfill\Intl\Idn\Resources\unidata\Regex;
 
 class TodoController extends Controller
 {
@@ -41,8 +41,7 @@ class TodoController extends Controller
     }
 
     public function delete_todo(Request $request){
-        $id = $request->validate(['id' => 'required']);
-        
+        $id = $request->validate(['id' => 'required']);     
         return ['msg' => $this->TodoService->delete_todo($id)];
     }
 }
